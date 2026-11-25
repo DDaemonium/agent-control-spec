@@ -2,3 +2,6 @@
 
 [target.'cfg(all(target_os = "windows", target_env = "msvc"))']
 rustflags = ["-C", "control-flow-guard=checks"]
+
+[target.'cfg(target_env = "musl")']
+rustflags = ["-C", "target-feature=-crt-static"]
